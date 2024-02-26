@@ -27,8 +27,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-
 dependencies {
+    implementation("com.github.androidmads:QRGenerator:1.0.1")
     implementation("com.google.android.gms:play-services-code-scanner:16.1.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
