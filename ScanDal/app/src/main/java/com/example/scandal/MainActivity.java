@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
             String code;
             QR.ScanQR(this);
             code = QR.getQR();
-            button.setText(code);
-
         });
 
     }
