@@ -46,7 +46,7 @@ public class QRCodeScanner {
                             this.QR = barcode.getRawValue();
                             barcode.
                             ret.set(true);
-
+s
                         })
                 .addOnCanceledListener(
                         () -> {

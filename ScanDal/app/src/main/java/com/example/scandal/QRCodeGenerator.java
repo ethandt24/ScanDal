@@ -20,6 +20,7 @@ public class QRCodeGenerator {
         int width = img.getWidth();
         int height = img.getHeight();
         int dimension = height<width? height : width;
-        QRGEncoder qrgEncoder = new QRGEncoder(QRToken, null, QRGContents.Type.TEXT, smallerDimension);
+        QRGEncoder qrgEncoder = new QRGEncoder(QRToken, null, QRGContents.Type.TEXT, dimension);
+
     }
 }
