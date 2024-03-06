@@ -1,17 +1,9 @@
 package com.example.scandal;
 
-import static android.content.Context.WINDOW_SERVICE;
-import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.Point;
-import android.view.Display;
-import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.mlkit.vision.barcode.BarcodeScanner;
 import com.google.mlkit.vision.barcode.BarcodeScanning;
@@ -25,13 +17,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
-
-
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import androidmads.library.qrgenearator.QRGContents;
-import androidmads.library.qrgenearator.QRGEncoder;
-
 public class QRCode {
     private Bitmap QRPic;
     private String QRToken;
