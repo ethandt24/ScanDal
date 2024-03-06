@@ -1,9 +1,17 @@
 package com.example.scandal;
 
+import static android.content.Context.WINDOW_SERVICE;
+import static androidx.core.content.ContextCompat.getSystemService;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Point;
+import android.view.Display;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.mlkit.vision.barcode.BarcodeScanner;
 import com.google.mlkit.vision.barcode.BarcodeScanning;
@@ -12,9 +20,13 @@ import com.google.mlkit.vision.codescanner.GmsBarcodeScanner;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions;
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning;
 import com.google.mlkit.vision.common.InputImage;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
-import java.io.IOException;
-import java.net.URI;
+
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import androidmads.library.qrgenearator.QRGContents;
@@ -54,25 +66,24 @@ public class QRCode {
 
     /**
      * sets the attribute QRPic to the BitMap
-     * @param img
      */
     public void generateQR(ImageView img, String token){
-        int width = img.getWidth();
-        int height = img.getHeight();
-        int dimension = height<width? height : width;
-        QRGEncoder qrgEncoder = new QRGEncoder(QRToken, null, QRGContents.Type.TEXT, dimension);
-        qrgEncoder.setColorBlack(Color.RED);
-        qrgEncoder.setColorWhite(Color.BLUE);
-        // Getting QR-Code as Bitmap
-        QRPic = qrgEncoder.getBitmap();
-        // Setting Bitmap to ImageView
-        img.setImageBitmap(QRPic);
+        Integer dim =Math.min(img.getHeight(), img.getWidth());
+        MultiFormatWriter writer = new MultiFormatWriter();
+        try {
+            BitMatrix bitMatrix = writer.encode(token, BarcodeFormat.QR_CODE, dim, dim);
+            BarcodeEncoder encoder = new BarcodeEncoder();
+            QRPic = encoder.createBitmap(bitMatrix);
+            img.setImageBitmap(QRPic);
+        } catch (WriterException e) {
+            throw new RuntimeException(e);
+        }
 
     }
     public boolean getQRFromImage(Bitmap bitmap, Context context) {
         InputImage image;
         BarcodeScanner scanner = BarcodeScanning.getClient();
-        
+
 
         return false;
     }
