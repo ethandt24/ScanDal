@@ -21,7 +21,7 @@ import java.util.List;
 public class QRCode {
     /**
      * QRCode Class is used to stored a QR code in various forms
-     * manages QR scanning and generation, uses Bitmap to store QR
+     * manages QR generation and a various QR related objects, uses Bitmap to store QR
      * images and a String for the Token stored in the QR token.
      */
     private Bitmap QRPic;
@@ -32,6 +32,9 @@ public class QRCode {
      * the designated area and stores it in the QRPic attribute which
      * can be accessed via it's getter, as well as sets the QRToken
      * attribute to the token inputted
+     * Sources:
+     * https://www.youtube.com/watch?v=n8HdrLYL9DA
+     * https://github.com/journeyapps/zxing-android-embedded
      * @param img a ImageView to get a reference for the size of the QR
      * @param token a String Token which will be encoded into the generated QR
      * @return boolean of whether a QR was successfully generated
@@ -59,6 +62,8 @@ public class QRCode {
      * @param bitmap a Bitmap which represents the image that contains a Bitmap
      * @param rotationDegree rotation degree of the image stored in the Bitmap
      * @return boolean whether a QR was successfully read from the image.
+     * Sources:
+     * https://developers.google.com/ml-kit/vision/barcode-scanning/android
      */
     public boolean getQRFromImage(Bitmap bitmap, int rotationDegree) {
         InputImage image;
