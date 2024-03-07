@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Placeholder;
 
 public class HomeActivity extends AppCompatActivity {
     private ImageView profile;
@@ -23,17 +24,21 @@ public class HomeActivity extends AppCompatActivity {
          scan = findViewById(R.id.buttonScanQRCode);
          attendeeEvents = findViewById(R.id.buttonViewMyAttendeeEvents);
          eventBrowser = findViewById(R.id.buttonBrowseEvents);
+         Profile userProfile = getIntent().getParcelableExtra("userProfile");
+
          eventBrowser.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent myintent = new Intent(HomeActivity.this, );
+                 Intent myintent = new Intent(HomeActivity.this, PlaceHolder.class);
+                 myintent.putExtra("userProfile", userProfile );
+
              }
          });
          attendeeEvents.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  Intent myintent = new Intent(HomeActivity.this, PlaceHolder.class); // replace placeholder class with the activity for attendee
-                 myintent.putExtra("userProfile", );
+                 myintent.putExtra("userProfile", userProfile );
                  startActivity(myintent);
              }
          });
@@ -41,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
              @Override
              public void onClick(View view) {
                  Intent myintent = new Intent(HomeActivity.this, QRCodeScanner.class);
+                 myintent.putExtra("userProfile", userProfile );
+                 myintent.putExtra("Activity", 1);
                  startActivity(myintent);
              }
          });
@@ -49,6 +56,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myintent = new Intent(HomeActivity.this, Profile.class);
+                myintent.putExtra("userProfile", userProfile );
                 startActivity(myintent);
             }
         });
