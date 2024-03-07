@@ -15,7 +15,6 @@ public class HomeActivity extends AppCompatActivity {
     private Button scan;
     private TextView attendeeEvents;
     private TextView eventBrowser;
-    private ImageView gear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +23,25 @@ public class HomeActivity extends AppCompatActivity {
          scan = findViewById(R.id.buttonScanQRCode);
          attendeeEvents = findViewById(R.id.buttonViewMyAttendeeEvents);
          eventBrowser = findViewById(R.id.buttonBrowseEvents);
+         ImageView settings = findViewById(R.id.imageGearOne);
          Profile userProfile = getIntent().getParcelableExtra("userProfile");
+         settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myintent = new Intent(HomeActivity.this, PlaceHolder.class);
+                myintent.putExtra("userProfile", userProfile );
+                startActivity(myintent);
 
+
+            }
+        });
          eventBrowser.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  Intent myintent = new Intent(HomeActivity.this, PlaceHolder.class);
                  myintent.putExtra("userProfile", userProfile );
+                 startActivity(myintent);
+
 
              }
          });
