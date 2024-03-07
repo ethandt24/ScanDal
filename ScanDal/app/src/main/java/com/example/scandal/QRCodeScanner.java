@@ -48,7 +48,7 @@ public class QRCodeScanner extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.camera_testing);
+        setContentView(R.layout.scanning_qr);
         Log.e("hpeebles", "QRCodeScanner Inside");
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
         mCodeScanner = new CodeScanner(this, scannerView);
