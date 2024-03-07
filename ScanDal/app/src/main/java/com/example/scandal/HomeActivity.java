@@ -13,6 +13,8 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView profile;
     private Button scan;
     private TextView attendeeEvents;
+    private TextView eventBrowser;
+    private ImageView gear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,11 +22,18 @@ public class HomeActivity extends AppCompatActivity {
          profile = findViewById(R.id.profilePicture);
          scan = findViewById(R.id.buttonScanQRCode);
          attendeeEvents = findViewById(R.id.buttonViewMyAttendeeEvents);
+         eventBrowser = findViewById(R.id.buttonBrowseEvents);
+         eventBrowser.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent myintent = new Intent(HomeActivity.this, );
+             }
+         });
          attendeeEvents.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent myintent = new Intent(HomeActivity.this, Profile.class);
-
+                 Intent myintent = new Intent(HomeActivity.this, PlaceHolder.class); // replace placeholder class with the activity for attendee
+                 myintent.putExtra("userProfile", );
                  startActivity(myintent);
              }
          });
