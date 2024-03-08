@@ -23,7 +23,7 @@ import java.util.List;
  * manages QR generation and a various QR related objects, uses Bitmap to store QR
  * images and a String for the Token stored in the QR token.
  */
-public class QRCode {
+public class QRCode { 
     /**
      * Bitmap image of the QR code in
      */

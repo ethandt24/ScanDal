@@ -64,7 +64,7 @@ public class EventActivity extends AppCompatActivity {
     AppCompatButton deletePosterButton;
 
     /**
-     * Firebase Firestore instance for database operations
+     * Firebase Firestore instance for database operationsgit statu
      */
     private FirebaseFirestore db;
 
