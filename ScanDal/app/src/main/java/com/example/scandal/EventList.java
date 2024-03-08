@@ -1,6 +1,5 @@
 package com.example.scandal;
 import java.util.List;
-
 /**
  * A list of all events managed by ScanDal
  */

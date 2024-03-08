@@ -1,5 +1,4 @@
 package com.example.scandal;
-
 /**
  * Sends alerts to organizers and attendees
  */

@@ -2,7 +2,6 @@ package com.example.scandal;
 
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * A dictionary for storing attendees of an event
  */

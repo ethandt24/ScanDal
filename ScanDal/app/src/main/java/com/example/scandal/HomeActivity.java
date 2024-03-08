@@ -11,11 +11,34 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.Placeholder;
 
+/**
+ * Activity for homepage. Displays homepage to the User and provides functionality.
+ */
 public class HomeActivity extends AppCompatActivity {
+    /**
+     * Profile image
+     */
     private ImageView profile;
+    /**
+     * Layout for QRCode scanner
+     */
     private LinearLayout scan;
+    /**
+     * Clickable text for viewing attendee events
+     */
     private TextView attendeeEvents;
+    /**
+     * Clickable text for browsing events
+     */
     private TextView eventBrowser;
+
+    /**
+     * Makes class attributes clickable
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

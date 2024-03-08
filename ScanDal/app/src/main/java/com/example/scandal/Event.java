@@ -1,6 +1,5 @@
 package com.example.scandal;
 import android.provider.MediaStore;
-
 /**
  * Represents an event
  */
@@ -41,7 +40,6 @@ public class Event {
 
 
     // Constructor
-
     /**
      * Add's the event to the event list
      * @param eventList instance of EventList class
@@ -52,7 +50,6 @@ public class Event {
     }
 
     // Methods
-
     /**
      * Signs in user to event
      * @param user
@@ -66,35 +63,30 @@ public class Event {
     }
 
     // Getters and Setters
-
     /**
      * @return the string representing QRCode used for sign in
      */
     public String getSignInQRCode() {
         return signInQRCode;
     }
-
     /**
      * @param signInQRCode the string representing QRCode used for sign in
      */
     public void setSignInQRCode(String signInQRCode) {
         this.signInQRCode = signInQRCode;
     }
-
     /**
      * @return the string representing QRCode used for promotion
      */
     public String getPromoQRCode() {
         return promoQRCode;
     }
-
     /**
      * @param promoQRCode the string representing QRCode used for promotion
      */
     public void setPromoQRCode(String promoQRCode) {
         this.promoQRCode = promoQRCode;
     }
-
     /**
      * @return current attendee dictionary
      * @see AttendeeDict
@@ -102,7 +94,6 @@ public class Event {
     public AttendeeDict getCurrentAttendees() {
         return currentAttendees;
     }
-
     /**
      * @param currentAttendees current attendee dictionary
      * @see AttendeeDict
@@ -110,7 +101,6 @@ public class Event {
     public void setCurrentAttendees(AttendeeDict currentAttendees) {
         this.currentAttendees = currentAttendees;
     }
-
     /**
      * @return registered attendee dictionary
      * @see AttendeeDict
@@ -118,7 +108,6 @@ public class Event {
     public AttendeeDict getRegistrants() {
         return registrants;
     }
-
     /**
      * @param registrants registered attendee dictionary
      * @see AttendeeDict
@@ -126,7 +115,6 @@ public class Event {
     public void setRegistrants(AttendeeDict registrants) {
         this.registrants = registrants;
     }
-
     /**
      * @return Alert object
      * @see Alert
@@ -134,7 +122,6 @@ public class Event {
     public Alert getAlerts() {
         return alerts;
     }
-
     /**
      * @param alerts Alert object
      * @see Alert
@@ -142,47 +129,42 @@ public class Event {
     public void setAlerts(Alert alerts) {
         this.alerts = alerts;
     }
-
     /**
      * @return max number of attendees
      */
     public Integer getMaxAttendees() {
         return maxAttendees;
     }
-
     /**
      * @param maxAttendees max number of attendees
      */
     public void setMaxAttendees(Integer maxAttendees) {
         this.maxAttendees = maxAttendees;
     }
-
     /**
      * @param description event description
      */
     public void setDesc(String description) {
         this.description = description;
     }
-
     /**
-     * @param poster event poster
+     * @return event poster
      * @see MediaStore.Images
      */
     public void setPoster(MediaStore.Images poster) {
         this.poster = poster;
     }
-
     /**
      * @return event description
      */
     public String getDesc() {
         return description;
     }
-
     /**
      * @return event poster
      * @see MediaStore.Images
      */
+
     public MediaStore.Images getPoster() {
         return poster;
     }
